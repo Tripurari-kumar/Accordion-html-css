@@ -1,0 +1,50 @@
+body {
+  font-family: sans-serif;
+  background: blueviolet;
+}
+
+#Accordion {
+  margin: 100px auto;
+  width: 600px;
+}
+
+#Accordion li {
+  /* removing dots of unordered list */
+  list-style: none;
+  background-color: #fff;
+  margin-bottom: 10px;
+  padding: 10px 15px;
+  border-radius: 4px;
+}
+
+#Accordion li label {
+  color: blueviolet;
+  font-size: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+
+#Accordion li label span {
+  transform: rotate(90deg);
+  font-size: 22px;
+  color: #000000;
+}
+
+/* The element+element selector is used to 
+select an element that is directly after 
+another specific element# */
+#Accordion li label + input[type="radio"] {
+  display: none;
+}
+
+#Accordion li p {
+  /* making accordion not visible  */
+  max-height: 0px;
+  overflow-y: hidden;
+  transition: max-height 0.5s;
+}
+
+#Accordion li label + input[type="radio"]:checked + p {
+  max-height: 300px;
+  overflow-y: visible;
+}
